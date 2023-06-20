@@ -1,3 +1,4 @@
+go
 age
 atuin
 btop
@@ -21,7 +22,6 @@ neofetch
 neovim
 npm
 plocate
-python3
 ripgrep
 speedtest-cli
 starship
