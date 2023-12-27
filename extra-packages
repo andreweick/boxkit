@@ -1,4 +1,6 @@
 asciiquarium
+plocate
+atuin
 go
 zoxide
 zsh
@@ -17,7 +19,6 @@ github-cli
 helix
 just
 make
-micro
 ncdu
 ncurses
 neofetch
