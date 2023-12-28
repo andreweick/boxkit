@@ -5,8 +5,9 @@ LABEL com.github.containers.toolbox="true" \
       summary="A cloud-native terminal experience" \
       maintainer="andy@eick.com"
 
-RUN echo https://downloads.1password.com/linux/alpinelinux/stable/ >> /etc/apk/repositories &&
-    wget https://downloads.1password.com/linux/keys/alpinelinux/support@1password.com-61ddfc31.rsa.pub -P /etc/apk/keys
+COPY add-1p-repo.sh /
+RUN /bin/sh /add-1p-repo.sh
+RUN rm /add-1p-repo.sh
 
 COPY extra-packages /
 RUN apk update && \
