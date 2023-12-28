@@ -5,13 +5,16 @@ LABEL com.github.containers.toolbox="true" \
       summary="A cloud-native terminal experience" \
       maintainer="andy@eick.com"
 
+RUN echo https://downloads.1password.com/linux/alpinelinux/stable/ >> /etc/apk/repositories &&
+    wget https://downloads.1password.com/linux/keys/alpinelinux/support@1password.com-61ddfc31.rsa.pub -P /etc/apk/keys
+
 COPY extra-packages /
 RUN apk update && \
     apk upgrade && \
     grep -v '^#' /extra-packages | xargs apk add
 RUN rm /extra-packages
 
-RUN curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path -y
+# RUN curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path -y
 
 # RUN curl https://get.volta.sh | bash
 
