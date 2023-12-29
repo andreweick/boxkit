@@ -1,7 +1,6 @@
 asciiquarium
 1password-cli
 glab
-plocate
 atuin
 go
 zoxide
@@ -11,7 +10,6 @@ atuin
 btop
 bat
 chezmoi
-clipboard
 cosign
 direnv
 exa
@@ -25,11 +23,9 @@ ncdu
 ncurses
 neofetch
 neovim
-npm
 ripgrep
 speedtest-cli
 starship
 vimdiff
-wl-clipboard
 zellij
 zstd
