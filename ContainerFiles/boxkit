@@ -5,6 +5,9 @@ LABEL com.github.containers.toolbox="true" \
       summary="A cloud-native terminal experience" \
       maintainer="jorge.castro@gmail.com"
 
+# Copy golang built for alpine
+COPY --from=golang:1.24.4-alpine /usr/local/go/ /usr/local/go/
+
 # Copy the setup scripts and package list
 COPY ../scripts/boxkit.sh /
 COPY ../scripts/distrobox-shims.sh /
