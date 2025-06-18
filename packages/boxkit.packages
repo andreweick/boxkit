@@ -15,7 +15,7 @@ just
 make
 ncdu
 ncurses
-neofetch
+fastfetch
 neovim
 ripgrep
 speedtest-cli
