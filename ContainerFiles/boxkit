@@ -12,7 +12,11 @@ COPY --from=golang:1.24.4-alpine /usr/local/go/ /usr/local/go/
 COPY ../scripts/boxkit.sh /
 COPY ../scripts/distrobox-shims.sh /
 COPY ../packages/boxkit.packages /
+copy ../scripts/xterm-ghostty.ti /
+
+# [Install terminfo codes for ghostty](https://ghostty.org/docs/help/terminfo)
+RUN tic -x /xterm-ghostty.ti
 
 # Run the setup scripts
 RUN chmod +x boxkit.sh distrobox-shims.sh && /boxkit.sh
-RUN rm /boxkit.sh /distrobox-shims.sh /boxkit.packages
+RUN rm /boxkit.sh /distrobox-shims.sh /boxkit.packages /xterm-ghostty.ti
