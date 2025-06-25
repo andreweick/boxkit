@@ -17,6 +17,7 @@ ncdu
 ncurses
 fastfetch
 neovim
+rclone
 ripgrep
 speedtest-cli
 starship
