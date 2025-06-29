@@ -1,6 +1,5 @@
 asciiquarium
 age
-atuin
 zoxide
 zsh
 btop
@@ -20,6 +19,5 @@ neovim
 rclone
 ripgrep
 speedtest-cli
-starship
 vimdiff
 zellij

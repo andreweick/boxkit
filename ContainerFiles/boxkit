@@ -8,6 +8,11 @@ LABEL com.github.containers.toolbox="true" \
 # Copy golang built for alpine
 COPY --from=golang:1.24.4-alpine /usr/local/go/ /usr/local/go/
 
+# Install current packages
+RUN curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+RUN curl -sS https://starship.rs/install.sh | sh
+RUN curl -L https://fly.io/install.sh | sh
+
 # Copy the setup scripts and package list
 COPY ../scripts/boxkit.sh /
 COPY ../scripts/distrobox-shims.sh /
