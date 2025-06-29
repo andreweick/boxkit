@@ -10,7 +10,7 @@ COPY --from=golang:1.24.4-alpine /usr/local/go/ /usr/local/go/
 
 # Install current packages
 RUN curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-RUN curl -sS https://starship.rs/install.sh | sh
+RUN sh <(curl -sS https://starship.rs/install.sh) -y
 RUN curl -L https://fly.io/install.sh | sh
 
 # Copy the setup scripts and package list
