@@ -1,9 +1,13 @@
 FROM quay.io/toolbx-images/alpine-toolbox:edge
 
-LABEL com.github.containers.toolbox="true" \
-      usage="This image is meant to be used with the toolbox or distrobox command" \
-      summary="A cloud-native terminal experience" \
-      maintainer="jorge.castro@gmail.com"
+# Using the Open Container Initiative (OCI) standard labels for best practice
+LABEL org.opencontainers.image.title="A cloud-native terminal experience" \
+      org.opencontainers.image.description="A batteries included toolbox or distrobox command based on Alpine" \
+      org.opencontainers.image.authors="M. Andrew Eick <andy@eick.com>" \
+      \
+      # Functional labels for specific tooling
+      com.github.containers.toolbox="true" \
+      io.containers.autoupdate="registry"
 
 # Copy golang built for alpine
 COPY --from=golang:1.24.4-alpine /usr/local/go/ /usr/local/go/
