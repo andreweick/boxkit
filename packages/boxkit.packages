@@ -20,4 +20,6 @@ rclone
 ripgrep
 speedtest-cli
 vimdiff
+podman
+yazi
 zellij
