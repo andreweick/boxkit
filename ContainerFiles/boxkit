@@ -12,6 +12,9 @@ LABEL org.opencontainers.image.title="A cloud-native terminal experience" \
 # Copy golang built for alpine
 COPY --from=golang:1.24.4-alpine /usr/local/go/ /usr/local/go/
 
+#add a shell
+RUN apk add --no-cache bash
+
 # Install current packages
 RUN ATUIN_NO_MODIFY_PATH=1  curl --proto '=https' --tlsv1.2 -LsSf https://github.com/atuinsh/atuin/releases/latest/download/atuin-installer.sh | sh
 RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
