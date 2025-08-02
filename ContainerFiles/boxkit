@@ -22,13 +22,13 @@ COPY ../scripts/boxkit.sh /
 COPY ../packages/boxkit.packages /
 
 # COPY ../scripts/distrobox-shims.sh /
-# COPY ../scripts/xterm-ghostty.tic /
+COPY ../scripts/xterm-ghostty.tic /
 
 # Run the setup scripts
-# RUN chmod +x boxkit.sh distrobox-shims.sh && /boxkit.sh
+RUN chmod +x boxkit.sh && /boxkit.sh
 
 # [Install terminfo codes for ghostty](https://ghostty.org/docs/help/terminfo) after ncurses has been installed
-# RUN tic -x /xterm-ghostty.tic
+RUN tic -x /xterm-ghostty.tic
 
 # Cleanup
-# RUN rm /boxkit.sh /distrobox-shims.sh /boxkit.packages /xterm-ghostty.tic
+RUN rm /boxkit.sh /boxkit.packages /xterm-ghostty.tic
