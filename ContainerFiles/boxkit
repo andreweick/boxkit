@@ -13,7 +13,7 @@ LABEL org.opencontainers.image.title="A cloud-native terminal experience" \
 COPY --from=golang:1.24.4-alpine /usr/local/go/ /usr/local/go/
 
 # ADD Charm
-RUN go install github.com/charmbracelet/crush@latest
+RUN /usr/local/go/bin/go install github.com/charmbracelet/crush@latest
 
 #add a shell
 RUN apk add --no-cache bash
